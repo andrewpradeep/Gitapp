@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:text="success"
-        android:textSize="30dp"/>
+        android:text="action"
+        android:textSize="33dp"/>
 
 </RelativeLayout>
