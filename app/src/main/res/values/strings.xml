@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Gitapp</string>
     <string name="wide_prompt">no of wides for a run</string>
+    <string name="hintsize"><font size="15">enter name</font></string>
     <string-array name="wides">
         <item>1</item>
         <item>2</item>
