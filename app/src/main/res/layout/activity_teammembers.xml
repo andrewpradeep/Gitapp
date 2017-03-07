@@ -8,30 +8,22 @@
     android:paddingLeft="2dp"
     android:paddingRight="2dp"
     android:paddingTop="3dp"
-    tools:context="com.example.andrew.gitapp.Teammembers">
+    tools:context="com.example.andrew.gitapp.activity.Teammembers">
 
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="400dp"
     android:id="@+id/gridlay"
     android:background="@color/colorAccent">
-    <GridView
-        android:id="@+id/gridview"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnWidth="80dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="70dp"
-        android:horizontalSpacing="50dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        
-        />
-    </LinearLayout>
+        android:layout_height="400dp"
+        android:scrollbars="vertical" />
+
+</LinearLayout>
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:text="submit"
@@ -40,10 +32,11 @@
         android:background="@android:color/black"
         android:id="@+id/team1_submit"
         android:layout_below="@+id/gridlay"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"/>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:text="back"
         android:textSize="20dp"
@@ -51,7 +44,8 @@
         android:textColor="@android:color/white"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/gridlay"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"/>
 
 
 </RelativeLayout>
