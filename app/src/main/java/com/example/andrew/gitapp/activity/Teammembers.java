@@ -25,6 +25,7 @@ public class Teammembers extends AppCompatActivity {
     public int numplay;
     public RecyclerView recyclerView;
     public team1adapter tadapter;
+    private String[] dataset = new String[14];
 
 
     @Override
@@ -35,9 +36,12 @@ public class Teammembers extends AppCompatActivity {
         noplay=getIntent().getExtras().getString("noplay");
         nowide=getIntent().getExtras().getString("nowide");
         numplay=Integer.parseInt(noplay);
+        for (int i=1;i<=numplay;i++)
+            dataset[i]="player "+(i+1);
+
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
-        tadapter = new team1adapter(this);
+        tadapter = new team1adapter(dataset,numplay);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

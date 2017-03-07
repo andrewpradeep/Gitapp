@@ -3,6 +3,8 @@ package com.example.andrew.gitapp.adapters;
 import android.content.Context;
 import android.graphics.Movie;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,26 +19,48 @@ import java.util.List;
  */
 
 public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder>
-{
+{   private String[] dataset;
     private LayoutInflater layoutInflater;
-    public  team1adapter(Context c)
+    private int numplay;
+    public  team1adapter(String[] dataset,int numplay)
     {
-      this.layoutInflater = LayoutInflater.from(c);
+        this.dataset=dataset;
+        this.numplay=numplay;
+
     }
     @Override
     public Myviewholder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View setview= layoutInflater.inflate(R.layout.teammem1adapt,parent,false);
-        return new team1adapter(setview);
+        View setview= LayoutInflater.from(parent.getContext()).inflate(R.layout.teammem1adapt,parent,false);
+        Myviewholder viewh= new Myviewholder(setview);
+        return viewh;
     }
 
     @Override
-    public void onBindViewHolder(Myviewholder holder, int position) {
+    public void onBindViewHolder(Myviewholder holder, final int position) {
+        holder.e1.setText(dataset[position]);
+        holder.e1.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                dataset[position]=charSequence.toString();
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return numplay;
     }
 
     public class Myviewholder extends RecyclerView.ViewHolder{
