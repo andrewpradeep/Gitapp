@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "please enter a integer", Toast.LENGTH_SHORT).show();
                 }
                 if(validover(num1) && validplayers(num2) ) {
-                    Intent intent = new Intent(MainActivity.this, Teammembers.class);
+                    Intent intent = new Intent(MainActivity.this, Teams.class);
                     s1 = e1.getText().toString();
                     s2 = e2.getText().toString();
                     s3 = spin.getSelectedItem().toString();

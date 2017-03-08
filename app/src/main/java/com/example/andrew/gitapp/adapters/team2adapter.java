@@ -10,19 +10,19 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andrew.gitapp.R;
-import com.example.andrew.gitapp.models.listteam1name;
+import com.example.andrew.gitapp.models.listteam2name;
 
 import java.util.List;
 
 /**
- * Created by andrew on 6/3/17.
+ * Created by andrew on 8/3/17.
  */
 
-public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder>
-{   private List<listteam1name> ltname;
+public class team2adapter extends RecyclerView.Adapter<team2adapter.Myviewholder>
+{   private List<listteam2name> ltname;
     private LayoutInflater layoutInflater;
     private int numplay;
-    public  team1adapter(List<listteam1name> ltname, int numplay)
+    public  team2adapter(List<listteam2name> ltname, int numplay)
     {
         this.ltname=ltname;
         this.numplay=numplay;
@@ -37,7 +37,7 @@ public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder
 
     @Override
     public void onBindViewHolder(Myviewholder holder, final int position) {
-        final listteam1name pname = ltname.get(position);
+        final listteam2name pname = ltname.get(position);
         holder.e1.setHint(pname.getPlayername());
         holder.e1.addTextChangedListener(new TextWatcher() {
 
@@ -66,20 +66,20 @@ public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder
     public int getItemCount() {
         return numplay;
     }
-    public List<listteam1name> retrieve_data()
+    public List<listteam2name> retrieve_data()
     {
         return  ltname;
     }
 
     public class Myviewholder extends RecyclerView.ViewHolder{
-    public EditText e1;
+        public EditText e1;
         public Button b1,b2;
-    public Myviewholder(View view)
-    {
-        super(view);
-        e1 =(EditText)view.findViewById(R.id.edit_playname);
+        public Myviewholder(View view)
+        {
+            super(view);
+            e1 =(EditText)view.findViewById(R.id.edit_playname);
 
+        }
     }
-}
 
 }

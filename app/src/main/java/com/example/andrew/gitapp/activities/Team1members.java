@@ -1,7 +1,5 @@
 package com.example.andrew.gitapp.activities;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -13,34 +11,32 @@ import android.widget.Toast;
 
 import com.example.andrew.gitapp.R;
 import com.example.andrew.gitapp.adapters.team1adapter;
-import com.example.andrew.gitapp.models.listteamname;
-import com.example.andrew.gitapp.models.teamnames;
+import com.example.andrew.gitapp.models.listteam1name;
+import com.example.andrew.gitapp.models.team1names;
 
 import java.util.List;
 
-public class Teammembers extends AppCompatActivity {
-    public String overs,noplay,nowide;
+public class Team1members extends AppCompatActivity {
+    public String noplay;
     public  int numplay;
     public RecyclerView recyclerView;
     public team1adapter tadapter;
     private Button b1,b2;
-    public List<listteamname> pllist;
+    public List<listteam1name> pllist;
 
 
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teammembers);
-        overs=getIntent().getExtras().getString("overs");
+        setContentView(R.layout.activity_team1members);
         noplay=getIntent().getExtras().getString("noplay");
-        nowide=getIntent().getExtras().getString("nowide");
         numplay=Integer.parseInt(noplay);
 
 
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-        teamnames.setlistdata(numplay);
+        team1names.setlistdata(numplay);
 
-        tadapter = new team1adapter(teamnames.getlistdata(),numplay);
+        tadapter = new team1adapter(team1names.getlistdata(),numplay);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(mLayoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
@@ -51,8 +47,8 @@ public class Teammembers extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 pllist = tadapter.retrieve_data();
-                final listteamname plname = pllist.get(1);
-                Toast.makeText(Teammembers.this,"the name is"+plname.getPlayername(),Toast.LENGTH_LONG).show();
+                final listteam1name plname = pllist.get(1);
+                Toast.makeText(Team1members.this,"the name is"+plname.getPlayername(),Toast.LENGTH_LONG).show();
             }
         });
         b2=(Button)findViewById(R.id.team1_back);

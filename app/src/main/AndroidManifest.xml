@@ -15,13 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.Teammembers">
+        <activity android:name=".activities.Team1members">
             <intent-filter>
                 <action android:name="com.example.andrew.gitapp.Teammembers" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.Team2members" />
+        <activity android:name=".activities.Teams"></activity>
     </application>
 
 </manifest>
