@@ -53,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+     b3.setOnClickListener(new View.OnClickListener() {
+         @Override
+         public void onClick(View view) {
+             Intent homeIntent = new Intent(Intent.ACTION_MAIN);
+             homeIntent.addCategory( Intent.CATEGORY_HOME );
+             homeIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+             startActivity(homeIntent);
+         }
+     });
     }
     public boolean validover(int num)
     {

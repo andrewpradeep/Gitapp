@@ -1,5 +1,7 @@
 package com.example.andrew.gitapp.activities;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -22,7 +24,7 @@ public class Teammembers extends AppCompatActivity {
     public RecyclerView recyclerView;
     public team1adapter tadapter;
     private Button b1,b2;
-    public List<listteamname> plname;
+    public List<listteamname> pllist;
 
 
 
@@ -48,8 +50,16 @@ public class Teammembers extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                plname = tadapter.retrieve_data();
-                Toast.makeText(Teammembers.this,"the name is"+plname.get(1),Toast.LENGTH_LONG).show();
+                pllist = tadapter.retrieve_data();
+                final listteamname plname = pllist.get(1);
+                Toast.makeText(Teammembers.this,"the name is"+plname.getPlayername(),Toast.LENGTH_LONG).show();
+            }
+        });
+        b2=(Button)findViewById(R.id.team1_back);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
