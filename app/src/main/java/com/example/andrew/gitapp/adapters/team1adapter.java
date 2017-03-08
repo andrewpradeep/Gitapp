@@ -8,10 +8,13 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.andrew.gitapp.R;
+import com.example.andrew.gitapp.models.listteamname;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,12 +22,12 @@ import java.util.List;
  */
 
 public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder>
-{   private String[] dataset;
+{   private List<listteamname> ltname;
     private LayoutInflater layoutInflater;
     private int numplay;
-    public  team1adapter(String[] dataset,int numplay)
+    public  team1adapter(List<listteamname> ltname,int numplay)
     {
-        this.dataset=dataset;
+        this.ltname=ltname;
         this.numplay=numplay;
 
     }
@@ -37,8 +40,12 @@ public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder
 
     @Override
     public void onBindViewHolder(Myviewholder holder, final int position) {
-        holder.e1.setText(dataset[position]);
+        final listteamname pname = ltname.get(position);
+        holder.e1.setHint(pname.getPlayername());
         holder.e1.addTextChangedListener(new TextWatcher() {
+
+
+
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -46,7 +53,7 @@ public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                dataset[position]=charSequence.toString();
+                pname.setPlayername(charSequence.toString());
 
             }
 
@@ -62,9 +69,14 @@ public class team1adapter extends RecyclerView.Adapter<team1adapter.Myviewholder
     public int getItemCount() {
         return numplay;
     }
+    public List<listteamname> retrieve_data()
+    {
+        return  ltname;
+    }
 
     public class Myviewholder extends RecyclerView.ViewHolder{
     public EditText e1;
+        public Button b1,b2;
     public Myviewholder(View view)
     {
         super(view);

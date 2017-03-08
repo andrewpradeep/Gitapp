@@ -1,4 +1,4 @@
-package com.example.andrew.gitapp.activity;
+package com.example.andrew.gitapp.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
