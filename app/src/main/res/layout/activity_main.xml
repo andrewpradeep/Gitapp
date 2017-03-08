@@ -52,7 +52,6 @@
         android:layout_below="@+id/edit_noplay"
         android:layout_marginTop="15dp"
         android:background="@color/colorAccent"
-        android:hint="  runs per wide"
         android:textColorHint="@android:color/black"
         android:id="@+id/spin_wide"
         android:entries="@array/wides"
