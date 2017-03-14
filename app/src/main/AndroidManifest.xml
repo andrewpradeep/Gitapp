@@ -17,13 +17,27 @@
         </activity>
         <activity android:name=".activities.Team1members">
             <intent-filter>
-                <action android:name="com.example.andrew.gitapp.Teammembers" />
+                <action android:name="com.example.andrew.gitapp.activities.Team1members" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.Team2members" />
-        <activity android:name=".activities.Teams"></activity>
+        <activity android:name=".activities.Team2members">
+            <intent-filter>
+                <action android:name="com.example.andrew.gitapp.activities.Team2members" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".activities.Teams">
+                <intent-filter>
+                    <action android:name="com.example.andrew.gitapp.activities.Teams" />
+
+                    <category android:name="android.intent.category.DEFAULT" />
+                </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
