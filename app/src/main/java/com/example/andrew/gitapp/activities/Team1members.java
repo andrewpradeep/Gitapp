@@ -1,5 +1,6 @@
 package com.example.andrew.gitapp.activities;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -15,6 +16,8 @@ import com.example.andrew.gitapp.models.listteam1name;
 import com.example.andrew.gitapp.models.team1names;
 
 import java.util.List;
+
+import static android.support.v7.recyclerview.R.styleable.RecyclerView;
 
 public class Team1members extends AppCompatActivity {
     public String noplay;
@@ -49,6 +52,10 @@ public class Team1members extends AppCompatActivity {
                 pllist = tadapter.retrieve_data();
                 final listteam1name plname = pllist.get(1);
                 Toast.makeText(Team1members.this,"the name is"+plname.getPlayername(),Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(Team1members.this,Teams.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                startActivity(intent);
             }
         });
         b2=(Button)findViewById(R.id.team1_back);

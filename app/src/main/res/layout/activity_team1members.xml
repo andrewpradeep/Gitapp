@@ -32,9 +32,10 @@
         android:layout_below="@+id/gridlay"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="10dp"
         android:layout_alignParentLeft="true">
     <Button
-        android:layout_width="160dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:text="submit"
         android:textSize="20dp"
@@ -50,9 +51,10 @@
     android:layout_below="@+id/gridlay"
     android:layout_alignParentRight="true"
     android:layout_marginTop="30dp"
-    android:layout_marginRight="20dp">
+    android:layout_marginRight="20dp"
+    android:layout_marginLeft="10dp">
         <Button
-            android:layout_width="160dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="back"
             android:id="@+id/team1_back"
