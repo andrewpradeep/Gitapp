@@ -29,15 +29,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.Teams">
-                <intent-filter>
-                    <action android:name="com.example.andrew.gitapp.activities.Teams" />
+            <intent-filter>
+                <action android:name="com.example.andrew.gitapp.activities.Teams" />
 
-                    <category android:name="android.intent.category.DEFAULT" />
-                </intent-filter>
-
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
+        <activity android:name=".activities.cointoss" />
+        <activity android:name=".activities.GameMain"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,8 @@
 package com.example.andrew.gitapp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -54,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
                     {
                         s4="2";
                     }
+                    SharedPreferences data = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
+                    data.edit().putString("overs",s1).commit();
+                    data.edit().putString("noplay",s2).commit();
                     intent.putExtra("overs", s1);
                     intent.putExtra("noplay", s2);
                     intent.putExtra("nowide", s4);

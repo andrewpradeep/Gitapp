@@ -1,5 +1,7 @@
 package com.example.andrew.gitapp.models;
 
+import android.util.Log;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +20,18 @@ public class team2names {
         for(int i=0;i<numplay;i++)
             playername[i]="player "+(i+1);
     }
+
+    public static void setdatalist(String[] pllist,int numplay)
+    {
+        numplayer = numplay;
+        playername = new String[numplay];
+        for(int i=0;i<numplay;i++) {
+            playername[i] = pllist[i];
+            Log.e("error", pllist[i].toString());
+        }
+
+    }
+
     public static List<listteam2name> getlistdata()
     {
         List<listteam2name> data = new ArrayList<>();

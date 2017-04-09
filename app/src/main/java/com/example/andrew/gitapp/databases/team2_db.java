@@ -3,19 +3,18 @@ package com.example.andrew.gitapp.databases;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 /**
- * Created by andrew on 20/3/17.
+ * Created by andrew on 24/3/17.
  */
 
-public class team1_db extends SQLiteOpenHelper {
+public class team2_db extends SQLiteOpenHelper {
     public static final String database_name="teams.db";
-    public static final String table_name="team1";
-    public static final String tab ="team2";
+    public static final String table_name="team2";
+    public static final String tab = "team1";
     public static final String column_name="name";
     public static final String column_runs="runs";
     public static final String column_ballsfaced="ballsfaced";
@@ -24,7 +23,7 @@ public class team1_db extends SQLiteOpenHelper {
     public static final String column_runsconceded="runsconceded";
 
 
-    public team1_db(Context context) {
+    public team2_db(Context context) {
         super(context, database_name, null, 1);
 
     }
@@ -37,7 +36,6 @@ public class team1_db extends SQLiteOpenHelper {
         Log.d("tab","table created");
         db.execSQL("create table "+tab+" (id integer primary key autoincrement,"+column_name+" text,"+column_runs+" integer,"+column_ballsfaced+" integer,"+column_wickets+" integer,"+column_oversbowled+" float,"+column_runsconceded+" integer);");
         Log.d("tab","table created");
-
     }
 
     @Override
@@ -59,24 +57,36 @@ public class team1_db extends SQLiteOpenHelper {
         contentValues.put(column_oversbowled,oversbowled);
         contentValues.put(column_runsconceded,runsconceded);
         long result = db.insert(table_name,null,contentValues);
-         if(result == -1)
-             return false;
+        if(result == -1)
+            return false;
         else {
-             Log.e("insetr","table inserted");
-             return true;
-         }
+            Log.e("insetr","table inserted");
+            return true;
+        }
     }
     public Cursor getalldata()
     {
+
+
+
+
+
+
+
+
+
+
+
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res = db.rawQuery("select * from "+table_name,null);
         Log.e("get","data gotten");
         return res;
     }
 
-     public void delete()
-     {
-         SQLiteDatabase db = this.getWritableDatabase();
-         db.execSQL("delete from "+table_name);
-     }
+    public void delete()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.execSQL("delete from "+table_name);
+    }
 }
+

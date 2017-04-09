@@ -35,7 +35,7 @@
         android:layout_marginLeft="20dp"
         android:layout_alignParentLeft="true">
         <Button
-            android:layout_width="160dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="submit"
             android:textSize="20dp"
@@ -53,7 +53,7 @@
         android:layout_marginTop="30dp"
         android:layout_marginRight="20dp">
         <Button
-            android:layout_width="160dp"
+            android:layout_width="130dp"
             android:layout_height="wrap_content"
             android:text="back"
             android:id="@+id/team1_back"
